@@ -42,7 +42,7 @@ function voicecount_fifty(){
   console.log(fifycount);
     if(fifycount >= 10){　
         const fifty_promice=new Promise((resolve,)=>{
-            bgmup.play();
+            bgmdown.play();
             clearTimeout(fiftybgm);
             setTimeout(()=>{
                 resolve();
@@ -56,13 +56,15 @@ function voicecount_fifty(){
            repcount=0;
            wait++;
            console.log(wait);
-           countup();
-        voicecount_down();
+           bgmcount_up=0;
+           bgmcount_down=0;
+           countdown();
+        voicecount_up();
         });
      
      　//idをclearTimeoutで指定している
       
-    }else if(timer==2||wait>=7){
+    }else if(timer==1&&wait>=7){
         clearTimeout(fiftybgm);
     timer=0;
     bgmcount_up=0;
@@ -181,7 +183,7 @@ function voicecount_down(){
         const up_promice=new Promise((resolve,)=>{
             clearTimeout(downbgm);
              bgmdown.play();
-            
+            console.log('音声');
              setTimeout(()=>{
                 resolve();
                 console.log('a');
@@ -274,17 +276,20 @@ start.onclick= function(){
 
    
 finish.onclick= function(){
-    if(timer == 0||timer==1 ){
+    if(timer == 1){
     timer=2;
     bgmcount_up=0;
     bgmcount_down=0;
     log.innerHTML=``;
     repcount=0;
     count=-1;
-        downcount=-1;
+    downcount=-1;
+    wait=3;
 
     }else{
         log.innerHTML=`行なった回数は${repcount}回です。`;
         repcount=0;
+        wait=3;
+        timer=2;
     }
 };
