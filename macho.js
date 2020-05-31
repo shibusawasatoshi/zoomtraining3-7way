@@ -274,7 +274,7 @@ start.onclick= function(){
 
    
 finish.onclick= function(){
-    if(timer == 0 ){
+    if(timer == 0||timer==1 ){
     timer=2;
     bgmcount_up=0;
     bgmcount_down=0;
