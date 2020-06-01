@@ -39,7 +39,7 @@ function voicecount_fifty(){
     let fiftybgm = setTimeout(voicecount_fifty, 1000);
     
     
-  console.log(fifycount);
+  //console.log(fifycount);
     if(fifycount >= 10){　
         const fifty_promice=new Promise((resolve,)=>{
             bgmdown.play();
@@ -277,6 +277,11 @@ start.onclick= function(){
    
 finish.onclick= function(){
     if(timer == 1){
+    clearTimeout(upbgm);
+    clearTimeout(downbgm);
+    clearTimeout(fiftybgm);
+    clearTimeout(id);
+    clearTimeout(downid);
     timer=2;
     bgmcount_up=0;
     bgmcount_down=0;
